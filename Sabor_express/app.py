@@ -1,6 +1,10 @@
 import os
 
-restaurantes = ["Restaurante 1", "Restaurante abc"]
+restaurantes = [
+{'nome':'Praça', 'categoria': 'Japonesa', 'ativo': False},
+{'nome':'Pizza Suprema', 'categoria':'Pizza','ativo':True},
+{'nome':'Cantina', 'categoria':'Italiano', 'ativo': False}
+]
 
 def voltar_ao_menu_principal():
     input("\nDigite uma tecla para voltar ao menu principal")
@@ -58,7 +62,10 @@ def listar_restaurantes():
     exibir_subtitulo('Listando restaurantes\n')
 
     for restaurante in restaurantes:
-        print(f'. {restaurante}')
+        nome_restaurante = restaurante["nome"] #atribuindo o valor da chave nome a variavel nome_restaurante
+        categoria = restaurante["categoria"]
+        ativo = restaurante["ativo"]
+        print(f'- {nome_restaurante} | {categoria} | {ativo}')
 
     voltar_ao_menu_principal()
 
