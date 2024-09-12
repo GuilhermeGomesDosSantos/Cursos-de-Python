@@ -4,6 +4,5 @@ num = int(input("Informe um número: "))
 
 contador = 0
 
-while (contador <= 10):
-    print(f"{contador} X {num} = {contador * num}")
-    contador += 1
+for i in range(1, 11):
+    print(f"{num} X {i} = {i * num}")
