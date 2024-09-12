@@ -12,7 +12,10 @@ def voltar_ao_menu_principal():
 
 def exibir_subtitulo(texto):
     os.system('cls')
+    linha = "*" * (len(texto))
+    print(linha)
     print(texto)
+    print(linha)
     print()
 
 def exibir_nome_do_programa():
@@ -47,7 +50,7 @@ def opcao_invalida():
 
 def cadastrar_novo_restaurante():
     os.system("cls")
-    exibir_subtitulo("Cadastro de novos restaurantes!\n")
+    exibir_subtitulo("Cadastro de novos restaurantes!")
 
     nome_do_restaurante = input("Digite o nome do restaurante que deseja cadastrar: ")
     categoria_do_restaurante = input(f"Digite a categoria do restaurante {nome_do_restaurante}: ")
@@ -63,13 +66,14 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     os.system('cls')
-    exibir_subtitulo('Listando restaurantes\n')
+    exibir_subtitulo('Listando restaurantes')
 
+    print(f'{"Nome do restaurante".ljust(22)} | {"Categoria".ljust(20)} | Status')
     for restaurante in restaurantes:
         nome_restaurante = restaurante["nome"] #atribuindo o valor da chave nome a variavel nome_restaurante
         categoria = restaurante["categoria"]
-        ativo = restaurante["ativo"]
-        print(f'- {nome_restaurante} | {categoria} | {ativo}')
+        ativo = 'ativado' if restaurante["ativo"] else 'desativado'
+        print(f'- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {ativo}')
 
     voltar_ao_menu_principal()
 
@@ -78,7 +82,7 @@ def alternar_estado_restaurante():
     nome_restaurante = input("Digite o nome do restaurante que deseja alterar o estado: ")
 
     restaurante_encontrado = False
-    
+
     for restaurante in restaurantes: #vai procurar pelo nome do restaurante, vai percorrer o dicionario pela chave 'nome'
         if nome_restaurante == restaurante["nome"]:
             restaurante_encontrado = True
@@ -92,7 +96,7 @@ def alternar_estado_restaurante():
         if not restaurante_encontrado:
             print(f"O restaurante {nome_restaurante} não foi encontrado")
 
-        voltar_ao_menu_principal()
+    voltar_ao_menu_principal()
 
 def escolher_opcao():
 
