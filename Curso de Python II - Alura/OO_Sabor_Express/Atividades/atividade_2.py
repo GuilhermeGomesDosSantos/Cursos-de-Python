@@ -6,5 +6,5 @@ class Restaurante():
     ativo = False
 
 restaurante_praca = Restaurante()
-
-print(f"Nome: {restaurante_praca.nome}")
+nome_do_restaurante = restaurante_praca.nome
+print(f"Nome: {nome_do_restaurante}")
