@@ -49,6 +49,16 @@ def opcao_invalida():
     voltar_ao_menu_principal()
 
 def cadastrar_novo_restaurante():
+    '''Essa função é responsável por cadastrar um novo restaurante
+    
+    Inputs:
+    - Nome do restaurante
+    - Categoria
+
+    Outputs:
+    - Adiciona um novo restaurante a lista de restaurantes
+    '''
+
     os.system("cls")
     exibir_subtitulo("Cadastro de novos restaurantes!")
 
