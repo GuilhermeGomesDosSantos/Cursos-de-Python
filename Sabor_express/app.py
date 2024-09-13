@@ -11,6 +11,7 @@ def voltar_ao_menu_principal():
     main()
 
 def exibir_subtitulo(texto):
+    '''Exibe o subtitulo de uma das opções do menu principal'''
     os.system('cls')
     linha = "*" * (len(texto))
     print(linha)
@@ -20,6 +21,7 @@ def exibir_subtitulo(texto):
 
 def exibir_nome_do_programa():
     print(
+        '''Exibe o nome estilizado do programa na tela'''
         """
 
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -33,11 +35,13 @@ def exibir_nome_do_programa():
 
 
 def finalizar_app():
+    '''Finaliza a interação com o app'''
     os.system("cls")
     exibir_subtitulo("Finalizando o app")
 
 
 def exibir_opcoes():
+    '''Exibe as opções do menu'''
     print("1. Cadastrar restaurante")
     print("2. Listar restaurante")
     print("3. Ativar restaurante")
@@ -45,6 +49,7 @@ def exibir_opcoes():
 
 
 def opcao_invalida():
+    '''Exibe mensagem de opção inválida e retorna para o menu principal'''
     print("Opção invalida!\n")
     voltar_ao_menu_principal()
 
@@ -75,6 +80,7 @@ def cadastrar_novo_restaurante():
 
 
 def listar_restaurantes():
+    '''Essa função é responsavel por listar todos os restaurantes que estão cadastrados'''
     os.system('cls')
     exibir_subtitulo('Listando restaurantes')
 
@@ -88,6 +94,8 @@ def listar_restaurantes():
     voltar_ao_menu_principal()
 
 def alternar_estado_restaurante():
+    '''Essa função é responsavel por permitir que um restaurante esteja ativo ou desativado'''
+
     exibir_subtitulo("Alterando o estado do restaurante")
     nome_restaurante = input("Digite o nome do restaurante que deseja alterar o estado: ")
 
@@ -109,7 +117,7 @@ def alternar_estado_restaurante():
     voltar_ao_menu_principal()
 
 def escolher_opcao():
-
+    '''Essa função permite selecionar uma opção do menu principal'''
     try:
         opcao_escolhida = int(input("Escolha uma opção: "))
 
@@ -132,6 +140,7 @@ def escolher_opcao():
 
 
 def main():
+    '''Função principal que inicia o programa;'''
     os.system("cls")
     exibir_nome_do_programa()
     exibir_opcoes()
