@@ -1,6 +1,6 @@
 # Imprima no console o nome e a categoria da instância restaurante_praca.
 
-class Restaurante():
+class Restaurante:
     nome = ""
     categoria = ""
     ativo = False
