@@ -14,9 +14,11 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
         #lembrando novamente o self, é a referencia da instancia do obj que está sendo usado naquele momento
         return f'{self._nome} | {self.categoria}'
     
-    def listar_restaurantes():# para criar sua propria função apenas utilize a palavra def
+    @classmethod
+    def listar_restaurantes(cls):# metodo da classe Restaurante
         print(f'{"Nome do Restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Status"}')
-        for restaurante in Restaurante.restaurantes:
+        # for restaurante in Restaurante.restaurantes:
+        for restaurante in cls.restaurantes: # acessa por meio do cls o atributo da classe que é a lista resutante
             print(f'{restaurante._nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo}')
 
     @property #property em python é um decorartor, o property permite transformar um método(função) de uma classe em um atributo de leitura e vice versa
@@ -24,9 +26,12 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
     def ativo(self):
         return f"☑" if self._ativo else "☒"
     
+    def alternar_estado (self):
+        self._ativo = not self._ativo
+
 # instanciar um objeto/criando um restaurante
 restaurante_praca = Restaurante('praça', 'Gourmet')
-restaurante_praca._nome = "praça 2.0"
+restaurante_praca.alternar_estado()
 restaurante_pizza = Restaurante('pizza Express', 'Italiana')
 
 Restaurante.listar_restaurantes()
