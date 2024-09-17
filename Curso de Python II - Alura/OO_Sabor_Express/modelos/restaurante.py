@@ -28,10 +28,3 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
     
     def alternar_estado (self):
         self._ativo = not self._ativo
-
-# instanciar um objeto/criando um restaurante
-restaurante_praca = Restaurante('praça', 'Gourmet')
-restaurante_praca.alternar_estado()
-restaurante_pizza = Restaurante('pizza Express', 'Italiana')
-
-Restaurante.listar_restaurantes()
