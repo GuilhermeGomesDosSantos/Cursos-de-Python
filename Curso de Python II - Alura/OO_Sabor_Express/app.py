@@ -8,9 +8,8 @@ if __name__ == "__main__":
     main()
 
 restaurante_praca = Restaurante("praça", "gourmet")
-restaurante_mexicana = Restaurante("Mexican Food", "Mexicana")
-restaurante_japonesa = Restaurante("Japa", "Japonesa")
-
-restaurante_mexicana.alternar_estado()
+restaurante_praca.receber_avaliacao("Gui", 8)
+restaurante_praca.receber_avaliacao("Fulano", 3)
+restaurante_praca.receber_avaliacao("Tester", 7)
 
 Restaurante.listar_restaurantes()
