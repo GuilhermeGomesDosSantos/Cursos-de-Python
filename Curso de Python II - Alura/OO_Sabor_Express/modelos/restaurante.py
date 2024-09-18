@@ -19,10 +19,10 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
     
     @classmethod
     def listar_restaurantes(cls):# metodo da classe Restaurante
-        print(f'{"Nome do Restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Status"}')
+        print(f'{"Nome do Restaurante".ljust(25)} | {"Categoria".ljust(25)} | {"Avaliação".ljust(25)} |{"Status"}')
         # for restaurante in Restaurante.restaurantes:
         for restaurante in cls.restaurantes: # acessa por meio do cls o atributo da classe que é a lista resutante
-            print(f'{restaurante._nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {restaurante.ativo}')
+            print(f'{restaurante._nome.ljust(25)} | {restaurante.categoria.ljust(25)} | {str(restaurante.media_avaliacoes).ljust(25)} | {restaurante.ativo}')
 
     @property #property em python é um decorartor, o property permite transformar um método(função) de uma classe em um atributo de leitura e vice versa
     # permite modificar o comportamento de outra funlção ou método de forma simples e reutilizável
@@ -36,11 +36,14 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
 
+
+    @property
     def media_avaliacoes(self):
         if not self._avaliacao:
             return 0
         
-        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao) # avaliacao._nota, é o atributo de cada obj Avalição que contém a nota
+        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
+        # avaliacao._nota, é o atributo de cada obj Avalição que contém a nota
         # self._avalicao, é uma lista de objetos
         # avalicao, é uma variavel temporária que representa cada obj Avaliacao na lista self._avaliacao durante a iteração
         # for avaliacao in self.avaliacao, faz a iteração sobre cada objeto Avalicao presente na lista self._avalicao
