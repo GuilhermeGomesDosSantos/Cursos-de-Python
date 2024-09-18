@@ -35,3 +35,18 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
     def receber_avaliacao(self, cliente, nota):
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
+
+    def media_avaliacoes(self):
+        if not self._avaliacao:
+            return 0
+        
+        soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao) # avaliacao._nota, é o atributo de cada obj Avalição que contém a nota
+        # self._avalicao, é uma lista de objetos
+        # avalicao, é uma variavel temporária que representa cada obj Avaliacao na lista self._avaliacao durante a iteração
+        # for avaliacao in self.avaliacao, faz a iteração sobre cada objeto Avalicao presente na lista self._avalicao
+
+        quantidade_de_notas = len(self._avaliacao)
+
+        media = round(soma_das_notas / quantidade_de_notas, 1)
+
+        return media
