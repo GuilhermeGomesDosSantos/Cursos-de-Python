@@ -1,15 +1,15 @@
 from modelos.restaurante import Restaurante
-# na pasta modelos, acesse o arquivo restaurante e importe a classe Restaurante
+from modelos.cardapio.bebida import Bebida
+from modelos.cardapio.prato import Prato
+
+restaurante_praca = Restaurante("praça", "gourmet")
+bebida_suco = Bebida("Suco de Melancia", 5.0, "grande")
+prato_paozinho = Prato("Pãozinho", 2.0, "O melhor pão da cidade")
 
 def main():
-    pass
+    print(bebida_suco)
+    print(prato_paozinho)
 
 if __name__ == "__main__":
     main()
 
-restaurante_praca = Restaurante("praça", "gourmet")
-restaurante_praca.receber_avaliacao("Gui", 4)
-restaurante_praca.receber_avaliacao("Fulano", 3)
-restaurante_praca.receber_avaliacao("Tester", 7)
-
-Restaurante.listar_restaurantes()
