@@ -12,6 +12,7 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
         self._ativo = False
         self._avaliacao = []
         Restaurante.restaurantes.append(self) #Como restaurantes é um atributo da classe, você precisa acessar a lista usando a classe e não o self (que se refere à instância)
+        self._cardapio = []
     
     def __str__(self) -> str: #converte um valor qualquer em string
         #lembrando novamente o self, é a referencia da instancia do obj que está sendo usado naquele momento
@@ -54,3 +55,10 @@ class Restaurante: # classe é uma abstração de um objeto do mundo em codigo
         media = round(soma_das_notas / quantidade_de_notas, 1)
 
         return media
+    
+    def adicionar_bebida_no_cardapio(self, bebida):
+        self._cardapio.append(bebida)
+
+    def adicionar_prato_no_cardapio(self, prato):
+        self._cardapio.append(prato)
+
