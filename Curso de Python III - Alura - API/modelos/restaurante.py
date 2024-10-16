@@ -81,8 +81,8 @@ class Restaurante:  # classe é uma abstração de um objeto do mundo em codigo
         for i, item in enumerate(self._cardapio, start=1):
             
             if hasattr(item, "descricao"):
-                mensagem_1 = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Descrição: {item.descricao}"
-                print(mensagem_1)
+                mensagem_prato = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Descrição: {item.descricao}"
+                print(mensagem_prato)
             else:
-                mensagem = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Tamanho: {item.tamanho}"
-                print(mensagem)
+                mensagem_bebida = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Tamanho: {item.tamanho}"
+                print(mensagem_bebida)
