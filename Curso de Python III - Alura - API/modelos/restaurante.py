@@ -84,6 +84,10 @@ class Restaurante:  # classe é uma abstração de um objeto do mundo em codigo
             if hasattr(item, "descricao"):
                 mensagem_prato = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Descrição: {item.descricao}"
                 print(mensagem_prato)
+
+            elif hasattr(item, "tipo"):
+                mensagem_sobremesa = f"{i}. Nome:{item._nome} | Preço R$: {item._preco} | Tipo: {item.tipo}"
+                print(mensagem_sobremesa)
             else:
                 mensagem_bebida = f"{i}. Nome: {item._nome} | Preço R$: {item._preco} | Tamanho: {item.tamanho}"
                 print(mensagem_bebida)
