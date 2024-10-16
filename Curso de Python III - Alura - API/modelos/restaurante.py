@@ -75,6 +75,7 @@ class Restaurante:  # classe é uma abstração de um objeto do mundo em codigo
         ):  # irá verificar se o item é um objeto da calsse ItemCardapio
             self._cardapio.append(item)
 
+    @property
     def exibir_cardapio(self):
         print(f"Cardapio do restaurante {self._nome}\n")
 
